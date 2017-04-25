@@ -1,0 +1,18 @@
+version: 1
+
+packageName: sumLimit
+
+capabilities:
+  - inventory
+  - storage
+  - http
+  - event-bus
+  - receipts
+
+daemons:
+  - name: limit
+    events:
+      - evo.receipt.opened
+      - evo.receipt.productAdded
+      - evo.receipt.closed
+    behavior: limit-daemon.js
