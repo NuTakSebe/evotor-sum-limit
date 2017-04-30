@@ -1,6 +1,9 @@
 version: 1
-
+!!!versionName: "1.0"
 packageName: sumLimit
+appName: "SumLimit"
+appUUID: "????"
+
 
 capabilities:
   - inventory
@@ -16,3 +19,18 @@ daemons:
       - evo.receipt.productAdded
       - evo.receipt.closed
     behavior: limit-daemon.js
+
+plugins:
+  - name: excess
+    moments:
+      - evo.receipt.opened
+      - evo.receipt.productAdded
+    point: before
+    behavior: out-of-range.js
+
+views:
+  - name: excess-lim
+    header: "Warning!"
+    source: "Путь к Html"
+    styles:
+      - "*.css"
