@@ -6,31 +6,21 @@ appUUID: "????"
 
 
 capabilities:
-  - inventory
   - storage
   - http
   - event-bus
   - receipts
 
-daemons:
-  - name: limit
-    events:
-      - evo.receipt.opened
-      - evo.receipt.productAdded
-      - evo.receipt.closed
-    behavior: limit-daemon.js
-
 plugins:
   - name: excess
     moments:
-      - evo.receipt.opened
-      - evo.receipt.productAdded
+      - событие перед закрытием чека и переходом к оплате
     point: before
     behavior: out-of-range.js
 
 views:
   - name: excess-lim
-    header: "Warning!"
-    source: "Путь к Html"
+    source: warning.html
+    scripts: warning.js
     styles:
       - "*.css"

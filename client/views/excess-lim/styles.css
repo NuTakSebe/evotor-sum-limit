@@ -1,0 +1,32 @@
+.form {
+    background: #f1f1f1;
+    border: 1px solid rgba(0, 0, 0, .05);
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 4px;
+}
+
+.form h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.form input {
+    border-radius: 4px;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    outline: none;
+    padding-left: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.form button {
+    height: 30px;
+    width: 100px;
+    border: 1px solid #e7e7e7;
+    background: #fff;
+    border-radius: 4px;
+    outline: none;
+}
